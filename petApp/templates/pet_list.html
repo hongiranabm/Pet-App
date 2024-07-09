@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet List</title>
+</head>
+<body>
+    <h2>Your Pets</h2>
+    <a href="{% url 'pet_create' %}">Add New Pet</a>
+    <ul>
+        {% for pet in pets %}
+        <li>
+            <a href="{% url 'pet_detail' pet.pk %}">{{ pet.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet List</title>
+</head>
+<body>
+    <h1>Pet List</h1>
+    <!-- Display pet list here -->
+</body>
+</html> -->
